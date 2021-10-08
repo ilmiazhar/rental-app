@@ -110,8 +110,6 @@ class Customers extends Component {
           <CustomersTable
             customers={customers}
             sortColumn={sortColumn}
-            // onLike={this.handl eLikes}
-            // onDelete={this.handleDelete}
             onSort={this.handleSort}
           />
           <Pagination
