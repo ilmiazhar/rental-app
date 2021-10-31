@@ -7,13 +7,15 @@ import LoginForm from "./components/loginForm";
 import Logout from "./components/logout";
 import RegisterForm from "./components/registerForm";
 import MovieForm from "./components/movieForm";
+import GenreForm from "./components/genreForm";
 import Movies from "./components/movies";
+import Genres from "./components/genres";
 import NavBar from "./components/common/navBar";
 import NotFound from "./components/notFound";
 import Rentals from "./components/rentals";
+import ProtectedRoute from "./components/common/protectedRoute";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import ProtectedRoute from "./components/common/protectedRoute";
 
 class App extends Component {
   state = {};
@@ -35,6 +37,11 @@ class App extends Component {
             <Route path="/register" component={RegisterForm} />
             <Route path="/login" component={LoginForm} />
             <Route path="/logout" component={Logout} />
+            <ProtectedRoute path="/genres/:id" component={GenreForm} />
+            <Route
+              path="/genres"
+              render={(props) => <Genres {...props} user={user} />}
+            />
             <ProtectedRoute path="/movies/:id" component={MovieForm} />
             <Route
               path="/movies"

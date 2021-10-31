@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import _ from "lodash";
 
 class Movies extends Component {
-  state = {
+state = {
     movies: [],
     genres: [],
     currentPage: 1,
